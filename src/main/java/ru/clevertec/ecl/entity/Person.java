@@ -19,7 +19,6 @@ import java.util.UUID;
 @EntityListeners(PersonListener.class)
 @Table(name = "persons")
 public class Person {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

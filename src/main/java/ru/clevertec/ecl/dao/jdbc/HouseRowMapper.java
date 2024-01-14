@@ -10,7 +10,6 @@ import java.util.UUID;
 
 @Component
 public class HouseRowMapper implements RowMapper<House> {
-
     @Override
     public House mapRow(ResultSet rs, int rowNum) throws SQLException {
 

@@ -19,7 +19,6 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 public class HouseServiceImp implements HouseService {
-
     private final HouseDao houseDao;
     private final HouseMapper houseMapper;
     private  final PersonService personService;

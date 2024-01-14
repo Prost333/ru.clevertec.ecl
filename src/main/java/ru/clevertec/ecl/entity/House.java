@@ -18,7 +18,6 @@ import ru.clevertec.ecl.entity.Listener.HouseListener;
 @EntityListeners(HouseListener.class)
 @Table(name = "houses")
 public class House {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

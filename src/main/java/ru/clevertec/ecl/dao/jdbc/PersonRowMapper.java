@@ -13,8 +13,6 @@ import java.util.UUID;
 
 @Component
 public class PersonRowMapper implements RowMapper<Person> {
-
-
     @Override
     public Person mapRow(ResultSet rs, int rowNum) throws SQLException {
         Person person = new Person();

@@ -19,7 +19,6 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 public class PersonServiceImp implements PersonService {
-
     private final PersonDao personDao;
 
     private final PersonMapper personMapper;
