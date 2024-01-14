@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: sql/v0.0/ddl/createHouse.sql
+  - include:
+      file: sql/v0.0/ddl/createPersons.sql
+  - include:
+      file: sql/v0.0/ddl/createHousesPersons.sql
+  - include:
+      file: sql/v0.0/dml/insertHouses.sql
+  - include:
+      file: sql/v0.0/dml/insertPersons.sql
+  - include:
+      file: sql/v0.0/dml/insertHousesPersons.sql
