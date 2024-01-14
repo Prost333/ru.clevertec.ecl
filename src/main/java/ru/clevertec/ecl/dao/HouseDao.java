@@ -10,18 +10,6 @@ import java.util.UUID;
 
 public interface HouseDao {
 
-    HouseRes update(House o);
 
-    HouseRes findById(Long id);
-
-    void save(House house);
-
-    List<HouseRes> findAll(int page, int pageSize);
-
-    void delete(UUID uuid);
-
-    House findByUUID(UUID id);
-    List<House> findAbsolutText(String text);
-    List<House> findOwners(UUID houseId);
 
 }

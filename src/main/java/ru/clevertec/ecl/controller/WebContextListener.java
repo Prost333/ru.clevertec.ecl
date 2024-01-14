@@ -12,13 +12,5 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 @WebListener
 public class WebContextListener implements WebMvcConfigurer {
 
-    @Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new JavaTimeModule());
-        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
-        converter.setObjectMapper(mapper);
-        converters.add(converter);
-    }
 
 }

@@ -15,9 +15,4 @@ import jakarta.persistence.UniqueConstraint;
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = {"passport_series", "passport_number"}))
 public class Passport {
 
-    @Column(name = "passport_series", nullable = false)
-    String series;
-
-    @Column(name = "passport_number", nullable = false)
-    String number;
 }

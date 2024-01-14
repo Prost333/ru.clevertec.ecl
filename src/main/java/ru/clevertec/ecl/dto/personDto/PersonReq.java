@@ -22,23 +22,4 @@ import java.util.UUID;
 @AllArgsConstructor
 public class PersonReq {
 
-    @NotBlank
-    @Size(max = 50)
-    private String name;
-
-    @NotBlank
-    @Size(max = 50)
-    private String surname;
-
-    private Sex sex;
-
-    @NotNull
-    private Passport passport;
-
-    @NotNull
-    private UUID houseUUID;
-
-    @Valid
-    @Builder.Default
-    private List<House> ownedHouses = new ArrayList<>();
 }

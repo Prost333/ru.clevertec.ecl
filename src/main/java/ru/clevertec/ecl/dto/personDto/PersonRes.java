@@ -16,17 +16,6 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PersonRes {
-    private UUID uuid;
-    private Passport passport;
-    private String name;
-    private String surname;
-    private Sex sex;
-    private String adress;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss:SSS")
-    private LocalDateTime createDate;
-
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss:SSS")
-    private LocalDateTime updateDate;
 }
 

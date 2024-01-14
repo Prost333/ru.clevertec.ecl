@@ -19,31 +19,5 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class HouseReq {
-    @NotBlank
-    @Size(max = 50)
-    private String area;
 
-    @NotBlank
-    @Size(max = 50)
-    private String country;
-
-    @NotBlank
-    @Size(max = 50)
-    private String city;
-
-    @NotBlank
-    @Size(max = 50)
-    private String street;
-
-    @NotNull
-    @Size(max = 30)
-    private Integer number;
-
-    @Valid
-    @Builder.Default
-    private List<Person> residents = new ArrayList<>();
-
-    @Valid
-    @Builder.Default
-    private List<Person> owners = new ArrayList<>();
 }

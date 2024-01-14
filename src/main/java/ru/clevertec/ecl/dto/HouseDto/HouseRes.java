@@ -13,12 +13,5 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class HouseRes {
-    private String area;
-    private UUID uuid;
-    private Integer number;
-    private String city;
-    private String street;
-    private String country;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss:SSS")
-    private LocalDateTime createDate;
+
 }
