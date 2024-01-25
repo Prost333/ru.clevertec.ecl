@@ -1,5 +1,6 @@
 package ru.clevertec.ecl.dto.HouseDto;
 
+
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -46,4 +47,9 @@ public class HouseReq {
     @Valid
     @Builder.Default
     private List<Person> owners = new ArrayList<>();
+
+    public HouseReq(String area, String country, String city, String street, Integer number) {
+
+
+    }
 }

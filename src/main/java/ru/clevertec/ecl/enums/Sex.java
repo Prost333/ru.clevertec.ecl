@@ -1,4 +1,4 @@
-package ru.clevertec.ecl.enim;
+package ru.clevertec.ecl.enums;
 
 public enum Sex {
     MALE, FEMALE

@@ -5,8 +5,21 @@ spring:
     username: postgres
     password: sa
     poolSize: 10
+  cache:
+    capacity: 10
+    algorithm: LFUCache
+  liquibase:
+    change-log: classpath:sql/db.changelog-master.yml
+    enabled: true
   hibernate:
-    ddl: none
-    format_Sql: true
-    dialect: org.hibernate.dialect.PostgreSQLDialect
-    show_Sql: true
+    ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG

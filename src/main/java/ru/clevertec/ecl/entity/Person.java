@@ -3,12 +3,13 @@ package ru.clevertec.ecl.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldNameConstants;
-import ru.clevertec.ecl.enim.Sex;
+import ru.clevertec.ecl.enums.Sex;
 import ru.clevertec.ecl.entity.Listener.PersonListener;
 
 import java.time.LocalDateTime;
 
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Data
@@ -47,8 +48,8 @@ public class Person {
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @ManyToOne(fetch = FetchType.EAGER,
-            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @ManyToOne(fetch = FetchType.LAZY,
+            cascade = {CascadeType.REFRESH, CascadeType.REMOVE})
     private House house;
 
     @ToString.Exclude
@@ -59,6 +60,11 @@ public class Person {
             joinColumns = @JoinColumn(name = "persons_id"),
             inverseJoinColumns = @JoinColumn(name = "houses_id"))
     private List<House> ownedHouses;
+
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
+    private Set<HouseHistory> personHouseHistories;
 }
 
 
