@@ -1,10 +1,15 @@
 package ru.clevertec.ecl.entity;
 
 import lombok.*;
+
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
+
 import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
+
 import lombok.experimental.FieldNameConstants;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
@@ -15,6 +20,7 @@ import ru.clevertec.ecl.entity.Listener.HouseListener;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldNameConstants
+@Builder
 @EntityListeners(HouseListener.class)
 @Table(name = "houses")
 public class House {
@@ -45,20 +51,23 @@ public class House {
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @Fetch(FetchMode.JOIN)
     @OneToMany(fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL,
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.REMOVE},
             mappedBy = "house")
-    private List<Person> residents;
+    private Set<Person> residents;
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @Fetch(FetchMode.JOIN)
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinTable(name = "houses_persons",
             joinColumns = @JoinColumn(name = "houses_id"),
             inverseJoinColumns = @JoinColumn(name = "persons_id"))
-    private List<Person> owners;
+    private Set<Person> owners;
+
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "house", fetch = FetchType.LAZY)
+    private Set<HouseHistory> houseHistories;
 
 }

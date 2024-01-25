@@ -1,6 +1,7 @@
 package ru.clevertec.ecl.entity;
 
 import jakarta.persistence.Column;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.Table;
@@ -12,6 +13,7 @@ import jakarta.persistence.UniqueConstraint;
 @NoArgsConstructor
 @AllArgsConstructor
 @Embeddable
+@Builder
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = {"passport_series", "passport_number"}))
 public class Passport {
     @Column(name = "passport_series", nullable = false)

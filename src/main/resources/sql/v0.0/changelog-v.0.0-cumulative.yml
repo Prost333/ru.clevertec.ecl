@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - include:
+      file: sql/v0.0/ddl/createTypes.sql
+  - include:
+      file: sql/v0.0/ddl/createHouse.sql
+  - include:
+      file: sql/v0.0/ddl/createPersons.sql
+  - include:
+      file: sql/v0.0/ddl/createHousesPersons.sql
+  - include:
+      file: sql/v0.0/ddl/createHouse_History.sql
+  - changeSet:
+      id: create_triggers
+      author: yourName
+      changes:
+        - sqlFile:
+            path: sql/v0.0/ddl/create_trigger.sql
+            splitStatements: false
+            stripComments: true
+  - include:
+      file: sql/v0.0/dml/insertTypes.sql
+  - include:
+      file: sql/v0.0/dml/insertHouses.sql
+  - include:
+      file: sql/v0.0/dml/insertPersons.sql
+  - include:
+      file: sql/v0.0/dml/insertHousesPersons.sql
