@@ -23,11 +23,6 @@ public class HouseRes {
     private LocalDateTime createDate;
 
     public HouseRes(UUID uuid, Integer number, String city, String street, String country, LocalDateTime createDate) {
-        this.uuid = uuid;
-        this.number = number;
-        this.city = city;
-        this.street = street;
-        this.country = country;
-        this.createDate = createDate;
+
     }
 }
