@@ -59,35 +59,25 @@ public class HouseServiceImpIntegrationTest {
                 when(houseDao.findByUUID(uuid)).thenReturn(house);
                 when(houseMapper.toResponse(house)).thenReturn(new HouseRes());
 
-                // Вызов метода update
                 houseServiceImp.update(uuid, houseReq);
 
-                // Вызов метода save
                 houseServiceImp.save(houseReq);
 
-                // Вызов метода findAll
                 Pageable pageable = PageRequest.of(0, 10);
                 houseServiceImp.findAll(0, 10);
 
-                // Вызов метода findHousesWhichSomeTimeLivesPerson
                 houseServiceImp.findHousesWhichSomeTimeLivesPerson(uuid, pageable);
 
-                // Вызов метода findHousesWhichSomeTimeOwnPerson
                 houseServiceImp.findHousesWhichSomeTimeOwnPerson(uuid, pageable);
 
-                // Вызов метода delete
                 houseServiceImp.delete(uuid);
 
-                // Вызов метода findAbsolutText
                 houseServiceImp.findAbsolutText("Test");
 
-                // Вызов метода findOwners
                 houseServiceImp.findOwners(uuid);
 
-                // Вызов метода buyHouse
                 houseServiceImp.buyHouse(uuid, uuid);
 
-                // Вызов метода findByUUID
                 houseServiceImp.findByUUID(uuid);
             });
         }
