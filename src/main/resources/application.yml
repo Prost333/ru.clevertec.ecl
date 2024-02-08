@@ -23,3 +23,6 @@ logging:
     root: INFO
     org.springframework.web: INFO
     org.hibernate.SQL: DEBUG
+exception:
+    handler:
+      enabled: true

@@ -1,4 +1,4 @@
-package ru.clevertec.ecl.exeption.model;
+package ru.clevertec.ecl.model;
 
 import lombok.Data;
 
@@ -6,4 +6,5 @@ import lombok.Data;
 public class ErrorResponse {
     private String message;
     private String code;
+
 }

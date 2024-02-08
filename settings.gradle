@@ -1,2 +1,3 @@
 rootProject.name = 'ru.clevertec.ecl'
+include 'spring-boot-exeption-starter'
 
